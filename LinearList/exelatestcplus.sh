@@ -1,5 +1,6 @@
 #!/bin/bash
 rm a.out >/dev/null 2>&1
+reset
 var=`ls -t *.cc | head -1`
  *find the latest cplus code
 grep -q "#include<iostream>" $var||sed -i '1 i\#include<iostream>' $var
