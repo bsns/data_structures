@@ -8,7 +8,6 @@ private:
     int *elements;
 public:
     seqlist(int size);
-    ~seqlist() {delete [] elements;}
     bool isEmpty();
     int getLength();
     int search(T x);
