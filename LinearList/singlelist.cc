@@ -84,12 +84,12 @@ bool singlelist::resetvalue(int n,int x){
     return 1;
     }
 bool singlelist::dellist(int n){
-    if(n<0||n>length-1){cout<<"OUT 95 BOUND";return 0;}
+    if(n<0||n>length-1){cout<<"OUT  BOUND";return 0;}
     node *p=first;node *q=first;
     for(int pp=0;pp<n;pp++){
     if(n==0){first=first->next;}          //the first node without front node
     else{
-    q=q->next;cout<<p->elements<<"=p";
+    q=q->next;cout<<p->elements;
     p=q->next;}}
     q->next=p->next;
     delete p;
