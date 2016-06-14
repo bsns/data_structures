@@ -13,7 +13,7 @@ public:
     //~stack();
     bool isEmpty();
     bool isFull();
-    int gettop();
+    bool gettop();
     bool push(int x);
     bool pop();
     void outprinf();
@@ -44,6 +44,11 @@ bool stack::pop(){
     delete p;
     //cout<<"pop sucessful"<<endl;
     valuemember--;
+    return 1;
+}
+bool stack::gettop(int x){
+    if(isEmpty()) {cout<<"Empty";return 0;}
+    x=first->next;
     return 1;
 }
 void stack::outprinf(){

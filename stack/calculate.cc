@@ -1,27 +1,28 @@
 #include<iostream>
-#include"stack.h"
+#include"stack_order.h"
 #include<math.h>
 using namespace std;
 class calculate{
 public:
+    calculate(int maxsize):s(maxsize){};
     void run();
-    void clear();
+    void clear(){s.clear();}
 private:
-    stack s;
+    seqstack<double> s;
     void pushOperand(double opera);
-    bool getOperands(double x,double y);
+    bool getOperands(double &op1,double &op2);
     void DoOperator(char);
 };
 void calculate::pushOperand(double opera){
     s.push(opera);
 }
-bool calculate::getOperands(double op1,double op2){
+bool calculate::getOperands(double &op1,double &op2){
     if(!s.gettop(op1)){
-        cout<<"miss op"<<endl; return 0;
+        cout<<"miss op1"<<endl; return 0;
     }
     s.pop();
     if(!s.gettop(op2)){
-        cout<<"miss op"<<endl; return 0;
+        cout<<"miss op2"<<endl; return 0;
     }
     s.pop();
     return 1;
@@ -32,7 +33,7 @@ void calculate::DoOperator(char op){
     if(getOperands(op1,op2))
         switch(op)
         {
-            case '+':s.push(op1+op2);break;
+            case '+':s.push(op2+op1);break;
             case '-':s.push(op2-op1);break;
             case '*':s.push(op1*op2);break;
             case '/':if(fabs(op1)<1e-6){
@@ -58,3 +59,9 @@ void calculate::run(){
 }}
     if(s.gettop(newop)) cout<<newop<<endl;
     }
+
+int main()
+{
+  calculate cal(20);
+  cal.run();
+}
