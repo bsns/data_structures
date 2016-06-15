@@ -18,7 +18,7 @@ void calculate::pushOperand(double opera){
 }
 bool calculate::getOperands(double &op1,double &op2){
     if(!s.gettop(op1)){
-        cout<<"miss op1"<<endl; return 0;
+        cout<<"miss op1"<<&op1<<endl; return 0;
     }
     s.pop();
     if(!s.gettop(op2)){

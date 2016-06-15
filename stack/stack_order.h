@@ -4,58 +4,59 @@ template <class T>
 class seqstack{
 public:
     seqstack(int maxsize);
+    ~seqstack(){delete []S;}
     bool isEmpty();
     bool isFull();
     int gettop(T &x);
     bool push(T x);
-    bool pop();
-    void clear(){msize=-1;}
+    T pop();
+    void clear(){top=-1;}
 private:
     int valueMember;
     T *S;
-    int msize;
+    int top;
 };
 template <class T>
 seqstack<T>::seqstack(int maxsize){
-    //msize--;
+    //top--;
     valueMember=maxsize-1;
     S=new T[maxsize];
     //valueMember=0;
-    msize=-1;
+    top=-1;
 }
 template <class T>
 bool seqstack<T>::isEmpty(){
-    return (msize==-1);
+    return (top==-1);
 }
 template <class T>
 bool seqstack<T>::isFull(){
-    //if(valueMember==msize)
-    //{cout<<msize;   return 1;}
+    //if(valueMember==top)
+    //{cout<<top;   return 1;}
     //else
     //    return 0;
-    return (valueMember==msize);
+    return (valueMember==top);
 }
 template <class T>
 int seqstack<T>::gettop(T &x){
     if(isEmpty()) {cout<<"Empty 40 ";return 0;}
     else
     //cout<<S[valueMember]<<endl;
-    x=S[msize];
+    x=S[top];
     return 1;
 }
 template <class T>
 bool seqstack<T>::push(T x){
     if(isFull()) {cout<<"Over Flow"; return 0;}
     else
-    S[++valueMember]=x;
+    S[++top]=x;
     return 1;
 }
 template <class T>
-bool seqstack<T>::pop(){
+T seqstack<T>::pop(){
     if(isEmpty()) {cout<<"Under 55 Flow";return 0;}
     else
-    msize--;
-    return 1;
+    //x=S[top--];
+    return S[top--];
 }
 /*int main()
 {
