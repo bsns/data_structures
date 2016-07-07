@@ -46,7 +46,7 @@ bool seqstack<T>::push(T x){
 }
 template <class T>
 bool seqstack<T>::pop(){
-    if(isEmpty()) {cout<<"Under 55 Flow";return 0;}
+    if(isEmpty()) {cout<<"Under Flow";return 0;}
     else
     return S[top--];
 }

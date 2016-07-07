@@ -28,7 +28,6 @@ bool calculate::getOperands(double &op1,double &op2){
     return 1;
 }
 void calculate::DoOperator(char op){
-    bool result;
     double op1,op2;
     if(getOperands(op1,op2))
         switch(op)
@@ -62,6 +61,7 @@ void calculate::run(){
 
 int main()
 {
-  calculate cal(20);
-  cal.run();
+    calculate cal(20);
+    cal.run();
+    return 0;
 }
