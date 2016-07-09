@@ -1,7 +1,8 @@
 #include<iostream>
 #include"stack_order.h"
-#include<math.h>
+#include<cmath>
 using namespace std;
+template<class T>
 class calculate{
 public:
     calculate(int maxsize):s(maxsize){};
