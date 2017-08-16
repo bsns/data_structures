@@ -19,6 +19,6 @@ int main()
     int A[]={49,37,68,72,13,45,03};
     selection(A);
     for(int kk=0;kk<=6;kk++)
-    cout<<" num"<<kk<<"="<<A[kk];
+    cout<<" num"<<kk<<"="<<A[kk]<<endl;
     return 0;
 }
