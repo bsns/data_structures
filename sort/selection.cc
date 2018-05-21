@@ -3,7 +3,8 @@ using namespace std;
 void selection(int Array[])
 {
     int tempvalue;
-    int length=sizeof(Array);
+    int length=sizeof(Array)-1;
+
     for(int ii=0;ii<=length;ii++)
     for(int jj=ii;jj<=length;jj++)
     if(Array[jj]<Array[ii])
